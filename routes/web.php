@@ -14,8 +14,8 @@
 Route::get('/', 'ShopController@nearby')->name('home');
 Route::get('/shops', 'ShopController@nearby');
 Route::get('/preferred', 'ShopController@preferred');
-Route::get('/like/{shopId}', 'ShopController@likeShop');
-Route::get('/dislike/{shopId}', 'ShopController@dislikeShop');
+Route::post('/like/{shopId}', 'ShopController@likeShop');
+Route::post('/dislike/{shopId}', 'ShopController@dislikeShop');
 
 Auth::routes();
 

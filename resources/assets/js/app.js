@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('shops-component', require('./components/ShopsComponent.vue'));
+Vue.component('preferred-shops-component', require('./components/PreferredShopsComponent.vue'));
 
 const app = new Vue({
     el: '#app'

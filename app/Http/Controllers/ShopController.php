@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Like;
 use App\User;
 use App\Shop;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 class ShopController extends Controller
@@ -31,6 +32,20 @@ class ShopController extends Controller
         $shops = Shop::orderBy(DB::raw("3959 * acos( cos( radians($latitude) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians($longitude) ) + sin( radians($latitude) ) * sin(radians(lat)) )"), 'ASC')
         ->whereNotIn('id', $currentUserPreferredShops)
         ->get();
+        // loop through each shop
+        foreach ($shops as $key => $shop) {
+            // check if there is a record in the likes tabel with user_id == $currentUser->id and shop_id  == to $shop->id
+            if($q = Like::where('user_id',$currentUser->id)->where('shop_id', $shop->id)->first()){
+                // if so then check if updated_at + 2 hours is greater than current time
+                if ($q->updated_at->addHours(2) > Carbon::now())
+                    {
+                        // remove shop from shops collection
+                            $shops->forget($key);
+                    }
+            }
+            
+         }
+
         // This approach uses the Spherical Law of Cosines to get the distance
         return view('shops.nearby',compact('shops'));
 

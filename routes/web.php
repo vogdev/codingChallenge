@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', 'ShopController@index');
-Route::get('/shops', 'ShopController@index');
+Route::get('/', 'ShopController@nearby')->name('home');
+Route::get('/shops', 'ShopController@nearby');
+Route::get('/preferred', 'ShopController@preferred');
+Route::get('/like/{shopId}', 'ShopController@likeShop');
+Route::get('/dislike/{shopId}', 'ShopController@dislikeShop');
 
 Auth::routes();
 

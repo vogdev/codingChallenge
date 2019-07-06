@@ -43203,7 +43203,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ShopsComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ShopsComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43212,9 +43212,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-61535992", Component.options)
+    hotAPI.createRecord("data-v-f859df12", Component.options)
   } else {
-    hotAPI.reload("data-v-61535992", Component.options)
+    hotAPI.reload("data-v-f859df12", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43261,22 +43261,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         like: function like(shop) {
-            var _this = this;
-
             // Method : POST, URL EXAMPLE : www.domain.com/like/1
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/like/' + shop.id).then(function () {
                 // find the index of the current liked shop and remove it from the nearbyShops array
-                _this.nearbyShops.splice(_this.nearbyShops.indexOf(shop), 1);
+                // this.nearbyShops.splice(this.nearbyShops.indexOf(shop), 1);              
             });
         },
         dislike: function dislike(shop) {
-            var _this2 = this;
+            var _this = this;
 
             // Method : POST, URL EXAMPLE : www.domain.com/dislike/1
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/dislike/' + shop.id)
             // find the index of the current disLiked shop and remove it from the nearbyShops array
             .then(function () {
-                _this2.nearbyShops.splice(_this2.nearbyShops.indexOf(shop), 1);
+                _this.nearbyShops.splice(_this.nearbyShops.indexOf(shop), 1);
             });
         }
     }
@@ -43342,7 +43340,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-61535992", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-f859df12", module.exports)
   }
 }
 
@@ -43372,7 +43370,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/PreferredShopsComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\PreferredShopsComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43381,9 +43379,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b000dc8c", Component.options)
+    hotAPI.createRecord("data-v-ec38870c", Component.options)
   } else {
-    hotAPI.reload("data-v-b000dc8c", Component.options)
+    hotAPI.reload("data-v-ec38870c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43485,7 +43483,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-b000dc8c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-ec38870c", module.exports)
   }
 }
 

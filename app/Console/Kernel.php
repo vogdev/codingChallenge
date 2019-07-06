@@ -24,8 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        // this schedule runs code from app/Console/Commands/DeleteOldLikes.php 
+        $schedule->command('command:deleteoldlikes')->everyMinute();
+        // to run this command every minute in the server you need to run the command : php artisan schedule:run
     }
 
     /**

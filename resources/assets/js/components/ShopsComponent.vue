@@ -30,7 +30,7 @@
                 axios.post(`/like/${shop.id}`)
                 .then(()=>{
                     // find the index of the current liked shop and remove it from the nearbyShops array
-                    this.nearbyShops.splice(this.nearbyShops.indexOf(shop), 1);              
+                    // this.nearbyShops.splice(this.nearbyShops.indexOf(shop), 1);              
                 })
             },
             dislike(shop){
